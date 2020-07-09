@@ -1,4 +1,4 @@
-# crona-display
+# Corona-Display
 
 ## Project setup
 ```
