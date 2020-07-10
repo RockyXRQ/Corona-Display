@@ -50,6 +50,7 @@ export default {
   name: "AreaDataTable",
   data: () => {
     return {
+      timer: null,
       expanded: [],
       singleExpand: true,
       search: "",
@@ -84,18 +85,24 @@ export default {
     };
   },
 
-  watch: {},
-
   methods: {
     DataUpdate() {
-      this.$axios
-        .get("/data/area_data.json")
-        .then(response => (this.items = response.data));
+      this.$axios.get("/data/area_data.json").then(response => {
+        this.items = response.data;
+      });
     }
   },
   created: function() {
     this.DataUpdate();
-    setInterval(this.DataUpdate, 180000);
+  },
+
+  mounted: function() {
+    this.timer = setInterval(this.DataUpdate, 3000); //定时间隔，
+  },
+
+  destroyed: function() {
+    clearInterval(this.timer);
+    this.timer = null;
   }
 };
 </script>

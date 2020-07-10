@@ -78,13 +78,11 @@ export default {
     };
   },
 
-  watch: {},
-
   methods: {
     DataUpdate() {
-      this.$axios
-        .get("/data/country_data.json")
-        .then(response => (this.items = response.data));
+      this.$axios.get("/data/country_data.json").then(response => {
+        this.items = response.data;
+      });
     },
     getConfirmedColor(increase) {
       if (increase > 1000) return "red";
@@ -106,7 +104,15 @@ export default {
   },
   created: function() {
     this.DataUpdate();
-    setInterval(this.DataUpdate, 180000);
+  },
+
+  mounted: function() {
+    this.timer = setInterval(this.DataUpdate, 3000); //定时间隔，
+  },
+
+  destroyed: function() {
+    clearInterval(this.timer);
+    this.timer = null;
   }
 };
 </script>

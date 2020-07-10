@@ -11,7 +11,7 @@
           transition="scale-transition"
           width="55"
         />
-        <v-btn text dense>
+        <v-btn dense text href="https://github.com/RockyXRQ/Corona-Display">
           <span>Corona-Display</span>
         </v-btn>
       </div>
