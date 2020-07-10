@@ -107,7 +107,7 @@ export default {
   },
 
   mounted: function() {
-    this.timer = setInterval(this.DataUpdate, 3000); //定时间隔，
+    this.timer = setInterval(this.DataUpdate, 180000); //定时间隔，
   },
 
   destroyed: function() {
