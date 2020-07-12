@@ -22,12 +22,11 @@ Corona-Display是一个使用树莓派+屏幕，自动爬取和展示网络上�
   
 - [运行Corona-Display](#运行Corona-Display)
   - [使用PC运行](#使用PC运行)
-  - [使用树莓派运行](使用树莓派运行)
+  - [使用树莓派运行](#使用树莓派运行)
   
 - [配置树莓派开机自启动Corona-Display](#配置树莓派开机自启动Corona-Display)
 
   - [配置crontab](#配置crontab)
-
   - [配置rc.local](#配置rc.local)
   - [配置autostart](#配置autostart)
 
@@ -79,11 +78,11 @@ pip install beautifulsoup4
    python3 -m http.server --bind 0.0.0.0 8080
    ```
 
-   ![http.server](C:\Personal\University\Code\HTML+CSS+JS\corona-display\public\assets\http.server.png)
+   ![http.server](https://raw.githubusercontent.com/RockyXRQ/Corona-Display/master/public/assets/http.server.png)
 
 3. 使用浏览器进入 http://0.0.0.0:8080，即可看到Corona-Display的数据展示页面。
 
-   ![corona-display-main-page](C:\Personal\University\Code\HTML+CSS+JS\corona-display\public\assets\corona-display-main-page.png)
+   ![corona-display-main-page](https://raw.githubusercontent.com/RockyXRQ/Corona-Display/master/public/assets/corona-display-main-page.png)
 
 ### 使用树莓派运行
 
@@ -101,7 +100,7 @@ pip install beautifulsoup4
 
 3. 使用浏览器进入 http://0.0.0.0:8080，即可看到Corona-Display的数据展示页面。
 
-   ![corona-display-main-page-raspberry](C:\Personal\University\Code\HTML+CSS+JS\corona-display\public\assets\corona-display-main-page-raspberry.png)
+   ![corona-display-main-page-raspberry](https://raw.githubusercontent.com/RockyXRQ/Corona-Display/master/public/assets/corona-display-main-page-raspberry.png)
 
 ## 配置树莓派开机自启动Corona-Display
 
