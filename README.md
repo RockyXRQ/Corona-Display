@@ -98,7 +98,7 @@ pip install beautifulsoup4
    python3 -m http.server --bind 0.0.0.0 8080
    ```
 
-3. 使用浏览器进入 http://0.0.0.0:8080，即可看到Corona-Display的数据展示页面。
+3. 使用浏览器进入[ http://0.0.0.0:8080]( http://0.0.0.0:8080)，即可看到Corona-Display的数据展示页面。
 
    ![corona-display-main-page-raspberry](https://raw.githubusercontent.com/RockyXRQ/Corona-Display/master/public/assets/corona-display-main-page-raspberry.png)
 
