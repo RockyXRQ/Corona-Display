@@ -33,11 +33,13 @@ class CronaCrawler:
         self.__save_as_json('data/area_data', area_info)
 
     def data_update(self):
+        print("数据已更新")
         self.__t1.start()
         self.__t2.start()
         self.__isUpdated = True
 
     def data_update_by_time(self, secs: int):
+        print("爬虫开始，更新时间间隔为 "+secs+" 秒")
         while True:
             self.data_update()
             time.sleep(secs)
