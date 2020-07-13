@@ -39,7 +39,7 @@ class CronaCrawler:
         self.__isUpdated = True
 
     def data_update_by_time(self, secs: int):
-        print("爬虫开始，更新时间间隔为 "+secs+" 秒")
+        print("爬虫开始，更新时间间隔为 "+str(secs)+" 秒")
         while True:
             self.data_update()
             time.sleep(secs)

@@ -25,8 +25,6 @@ Corona-Display是一个使用树莓派+屏幕，自动爬取和展示网络上�
   - [使用树莓派运行](#使用树莓派运行)
   
 - [配置树莓派开机自启动Corona-Display](#配置树莓派开机自启动Corona-Display)
-
-  - [配置crontab](#配置crontab)
   - [配置rc.local](#配置rc.local)
   - [配置autostart](#配置autostart)
 
@@ -104,22 +102,6 @@ pip install beautifulsoup4
 
 ## 配置树莓派开机自启动Corona-Display
 
-### 配置crontab
-
-crontab负责处理linux环境下的定时任务，配置crontab可以通过每3分钟执行一次我们的爬虫程序，使得新冠感染数据更新。
-
-1. 在终端下运行：
-
-   ```sh
-   sudo nano /etc/crontab
-   ```
-
-2. 在末尾添加以下代码并保存：
-
-   ```sh
-   /3 * * * * root python3 /home/pi/Corona-Display/scripts/CoronaCrawler.py
-   ```
-
 ### 配置rc.local
 
 1. 在终端下运行：
@@ -133,11 +115,15 @@ crontab负责处理linux环境下的定时任务，配置crontab可以通过每3
    ```sh
    su pi
    cd /home/pi/Corona-Display
+   python3 scripts/CoronaCrawler.py &
    python3 -m http.server --bind 0.0.0.0 8080 &
    service crond start
    ```
-
-   > 注意：当Raspbian在启动过程中执行rc.local是以root身份来执行的，则在rc.local中不使用su pi指令可能会造成某些程序的启动失败。还有请注意在rc.local内书写路径时请务必使用绝对地址。
+   
+   > 注意：
+   >
+   > 1. 当Raspbian在启动过程中执行rc.local是以root身份来执行的，则在rc.local中不使用su pi指令可能会造成某些程序的启动失败。
+   > 2. 若在使用su pi之后依然会出现因路径错误导致文件无法正常打开，可能是由于系统启动阶段环境变量未成功加载导致，建议全部使用绝对路径替代。
 
 ### 配置autostart
 
