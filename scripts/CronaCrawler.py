@@ -1,5 +1,6 @@
 import requests
 import threading
+import time
 from bs4 import BeautifulSoup
 
 
@@ -36,6 +37,11 @@ class CronaCrawler:
         self.__t2.start()
         self.__isUpdated = True
 
+    def data_update_by_time(self, secs: int):
+        while True:
+            self.data_update()
+            time.sleep(secs)
+
     @property
     def isUpdated(self):
         return self.__isUpdated
@@ -48,5 +54,5 @@ class CronaCrawler:
 cronaCrawler = CronaCrawler("https://ncov.dxy.cn/ncovh5/view/pneumonia")
 
 if __name__ == "__main__":
-    
-    cronaCrawler.data_update()
+
+    cronaCrawler.data_update_by_time(3*60)
